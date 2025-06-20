@@ -30,7 +30,7 @@ Incluye registro y login de usuarios con contraseñas hasheadas, y un cliente en
 1. **Clonar el repositorio**
 
 ```bash
-git clone <git@github.com:solealdao/pfo2-aldao.git>
+git clone git@github.com:solealdao/pfo2-aldao.git
 cd gestor_tareas
 ```
 
