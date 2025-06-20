@@ -27,6 +27,7 @@ with app.app_context():
 def tareas():
     return render_template_string("<h1>Bienvenido/a al sistema de tareas!</h1>")
 
+# Ruta de registro
 @app.route('/registro', methods=['POST'])
 def registro():
     datos = request.get_json()
@@ -50,6 +51,7 @@ def registro():
 
     return jsonify({'mensaje': 'Usuario registrado exitosamente'})
 
+# Ruta de login
 @app.route('/login', methods=['POST'])
 def login():
     datos = request.get_json()
@@ -67,6 +69,7 @@ def login():
     else:
         return jsonify({'mensaje': 'Credenciales inválidas'}), 401
 
+# Ruta de crear tarea
 @app.route('/tareas', methods=['POST'])
 def agregar_tarea():
     datos = request.get_json()
@@ -87,6 +90,7 @@ def agregar_tarea():
 
     return jsonify({'mensaje': 'Tarea agregada exitosamente'})
 
+# Ruta de listar tarea por usuario
 @app.route('/tareas/<usuario>', methods=['GET'])
 def listar_tareas(usuario):
     usuario_db = Usuario.query.filter_by(usuario=usuario).first()
